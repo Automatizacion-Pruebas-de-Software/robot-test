@@ -1,0 +1,13 @@
+{
+    "robot.language-server.python": "C:\\Python39\\python.exe",
+    "robot.pythonpath": [
+        "./resources",
+        "./tests"
+    ],
+    "robot.variables": {
+        "BASE_URL": "https://www.saucedemo.com/"
+    },
+    "robot.autoDocLibrary": true,
+    "robot.completions.sectionHeaders": true,
+    "robot.lint.robocop.enabled": true
+}

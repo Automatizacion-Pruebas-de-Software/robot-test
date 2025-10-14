@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.8 on darwin)" generated="2025-10-14T16:04:15.268420" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/Users/jorgefragoso/robot-test/tests">
+<suite id="s1-s1" name="Login Tests" source="/Users/jorgefragoso/robot-test/tests/login_tests.robot">
+<test id="s1-s1-t1" name="Login Exitoso Con Credenciales Validas" line="8">
+<kw name="Abrir Navegador" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:15.364667" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T16:04:15.364568" elapsed="2.969391"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T16:04:18.335024" elapsed="0.390130"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-14T16:04:18.725304" elapsed="0.003132"/>
+</kw>
+<doc>Abre el navegador y maximiza la ventana</doc>
+<status status="PASS" start="2025-10-14T16:04:15.364293" elapsed="3.364224"/>
+</kw>
+<kw name="Login Exitoso" owner="common">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:18.730613" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:18.730299" elapsed="0.141731"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:18.872317" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-10-14T16:04:18.884396" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:18.872158" elapsed="0.055057"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:18.927638" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:18.927410" elapsed="0.065787"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Products</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-14T16:04:18.993637" elapsed="0.014155"/>
+</kw>
+<doc>Realiza login con credenciales válidas</doc>
+<status status="PASS" start="2025-10-14T16:04:18.730058" elapsed="0.277806"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:19.009685" level="INFO">Current location is 'https://www.saucedemo.com/inventory.html'.</msg>
+<arg>${INVENTORY_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-10-14T16:04:19.007993" elapsed="0.001729"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:19.012918" level="INFO">Current page contains text 'Products'.</msg>
+<arg>Products</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-14T16:04:19.009824" elapsed="0.003133"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:19.017847" level="INFO">Current page contains element 'css=.inventory_item'.</msg>
+<arg>css=.inventory_item</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-14T16:04:19.013043" elapsed="0.004861"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:19.023889" level="INFO">Current page contains element 'css=.shopping_cart_link'.</msg>
+<arg>css=.shopping_cart_link</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-14T16:04:19.018035" elapsed="0.006036"/>
+</kw>
+<kw name="Cerrar Navegador" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T16:04:19.025240" elapsed="0.084697"/>
+</kw>
+<doc>Cierra el navegador</doc>
+<status status="PASS" start="2025-10-14T16:04:19.024948" elapsed="0.085052"/>
+</kw>
+<doc>Verifica que el login funcione con credenciales válidas
+Este es un caso de prueba positivo</doc>
+<status status="PASS" start="2025-10-14T16:04:15.363970" elapsed="3.746086"/>
+</test>
+<test id="s1-s1-t2" name="Login Fallido Con Credenciales Invalidas" line="25">
+<kw name="Abrir Navegador" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:19.110665" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T16:04:19.110563" elapsed="2.147604"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T16:04:21.258524" elapsed="0.386533"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-14T16:04:21.645693" elapsed="0.001486"/>
+</kw>
+<doc>Abre el navegador y maximiza la ventana</doc>
+<status status="PASS" start="2025-10-14T16:04:19.110448" elapsed="2.536848"/>
+</kw>
+<kw name="Login Fallido" owner="common">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:21.648731" level="INFO">Typing text 'invalid_user' into text field 'id=user-name'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:21.648236" elapsed="0.111699"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:21.760280" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-10-14T16:04:21.770514" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:21.760081" elapsed="0.026754"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:21.787070" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:21.786953" elapsed="0.041615"/>
+</kw>
+<doc>Realiza login con credenciales inválidas</doc>
+<status status="PASS" start="2025-10-14T16:04:21.647738" elapsed="0.180925"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:21.833053" level="INFO">Current page contains element 'css=.error-message-container'.</msg>
+<arg>${ERROR_MESSAGE}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-10-14T16:04:21.829020" elapsed="0.004070"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:21.841022" level="INFO">Element 'css=.error-message-container' contains text 'Epic sadface: Username and password do not match'.</msg>
+<arg>${ERROR_MESSAGE}</arg>
+<arg>Epic sadface: Username and password do not match</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-10-14T16:04:21.833180" elapsed="0.007916"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:21.842903" level="INFO">Current location is 'https://www.saucedemo.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-10-14T16:04:21.841251" elapsed="0.001772"/>
+</kw>
+<kw name="Cerrar Navegador" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T16:04:21.843510" elapsed="0.074790"/>
+</kw>
+<doc>Cierra el navegador</doc>
+<status status="PASS" start="2025-10-14T16:04:21.843366" elapsed="0.075009"/>
+</kw>
+<doc>Verifica que el login falle con credenciales inválidas
+Este es un caso de prueba negativo</doc>
+<status status="PASS" start="2025-10-14T16:04:19.110215" elapsed="2.808221"/>
+</test>
+<test id="s1-s1-t3" name="Login Con Usuario Bloqueado" line="41">
+<kw name="Abrir Navegador" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:21.919043" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T16:04:21.918935" elapsed="1.741919"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T16:04:23.672870" elapsed="0.753953"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-14T16:04:24.426991" elapsed="0.000862"/>
+</kw>
+<doc>Abre el navegador y maximiza la ventana</doc>
+<status status="PASS" start="2025-10-14T16:04:21.918811" elapsed="2.509107"/>
+</kw>
+<kw name="Login Exitoso" owner="common">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:24.428556" level="INFO">Typing text 'locked_out_user' into text field 'id=user-name'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:24.428416" elapsed="0.087916"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:24.516619" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-10-14T16:04:24.527785" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:24.516453" elapsed="0.028134"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:24.544813" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:24.544696" elapsed="0.037303"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:34.939472" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-14T16:04:34.939841" level="FAIL">Text 'Products' did not appear in 5 seconds.</msg>
+<arg>Products</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2025-10-14T16:04:24.582111" elapsed="10.360870">Text 'Products' did not appear in 5 seconds.</status>
+</kw>
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<doc>Realiza login con credenciales válidas</doc>
+<status status="FAIL" start="2025-10-14T16:04:24.428165" elapsed="10.514956">Text 'Products' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>${ERROR_MESSAGE}</arg>
+<arg>Epic sadface: Sorry, this user has been locked out.</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-10-14T16:04:34.943282" elapsed="0.000024"/>
+</kw>
+<kw name="Cerrar Navegador" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T16:04:34.943610" elapsed="0.082333"/>
+</kw>
+<doc>Cierra el navegador</doc>
+<status status="PASS" start="2025-10-14T16:04:34.943474" elapsed="0.082550"/>
+</kw>
+<doc>Verifica que no se puede login con usuario bloqueado</doc>
+<status status="FAIL" start="2025-10-14T16:04:21.918613" elapsed="13.107476">Text 'Products' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-s1-t4" name="Login Forzado a Fallar" line="51">
+<kw name="Abrir Navegador" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:35.027174" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-14T16:04:35.026884" elapsed="2.073364"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-14T16:04:37.100529" elapsed="0.388160"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-10-14T16:04:37.489254" elapsed="0.001574"/>
+</kw>
+<doc>Abre el navegador y maximiza la ventana</doc>
+<status status="PASS" start="2025-10-14T16:04:35.026726" elapsed="2.464309"/>
+</kw>
+<kw name="Login Exitoso" owner="common">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:37.493476" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:37.492936" elapsed="0.111121"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:37.604408" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2025-10-14T16:04:37.615078" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:37.604223" elapsed="0.026671"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:37.631211" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-14T16:04:37.631029" elapsed="0.047867"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Products</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-14T16:04:37.679079" elapsed="0.010647"/>
+</kw>
+<doc>Realiza login con credenciales válidas</doc>
+<status status="PASS" start="2025-10-14T16:04:37.491812" elapsed="0.198018"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:37.693644" level="INFO">Current page contains text 'Products'.</msg>
+<arg>Products</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-14T16:04:37.689982" elapsed="0.003708"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-10-14T16:04:57.930103" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-14T16:04:57.930323" level="FAIL">Page should have contained text 'Este Texto No Existe En La Página' but did not.</msg>
+<arg>Este Texto No Existe En La Página</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2025-10-14T16:04:37.693791" elapsed="20.237765">Page should have contained text 'Este Texto No Existe En La Página' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>css=.shopping_cart_link</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-10-14T16:04:57.931984" elapsed="0.000029"/>
+</kw>
+<kw name="Cerrar Navegador" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-14T16:04:57.932329" elapsed="0.087542"/>
+</kw>
+<doc>Cierra el navegador</doc>
+<status status="PASS" start="2025-10-14T16:04:57.932210" elapsed="0.087790"/>
+</kw>
+<doc>Este caso está diseñado para fallar intencionalmente
+para demostrar el manejo de pruebas fallidas</doc>
+<status status="FAIL" start="2025-10-14T16:04:35.026435" elapsed="22.993674">Page should have contained text 'Este Texto No Existe En La Página' but did not.</status>
+</test>
+<doc>Suite de pruebas para el login de SauceDemo</doc>
+<status status="FAIL" start="2025-10-14T16:04:15.282976" elapsed="42.738401"/>
+</suite>
+<status status="FAIL" start="2025-10-14T16:04:15.269036" elapsed="42.753076"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="2" fail="2" skip="0">Tests</stat>
+<stat name="Login Tests" id="s1-s1" pass="2" fail="2" skip="0">Tests.Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
